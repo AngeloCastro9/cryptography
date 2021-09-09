@@ -6,7 +6,7 @@ def send(message):
         keyFile.write(key)
     cipherSuite = Fernet(key)
     cipherText = cipherSuite.encrypt(message)
-    print('chiper message: ' + cipherText.decode('utf-8') + ' key: ' + key.decode('utf-8'))
+    print('cipher message: ' + cipherText.decode('utf-8') + ' key: ' + key.decode('utf-8'))
 
 def loadKey():  
     return open('secret.key', 'rb').read()
@@ -30,9 +30,9 @@ while True:
         send(bytes(message, encoding= 'utf-8'))
 
     if directionQuestion == '2':
-        chiperMessage = input('Input your chiper message: ')
+        cipherMessage = input('Input your cipher message: ')
         key = input('Input your key or type "True" to use stored key: ')
-        receive(bytes(chiperMessage, encoding= 'utf-8'), key)
+        receive(bytes(cipherMessage, encoding= 'utf-8'), key)
         
     if directionQuestion == '3':
         break
