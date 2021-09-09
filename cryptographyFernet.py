@@ -13,8 +13,8 @@ def loadKey():
     
 def receive(message, isKey):
     try: 
-        if(isKey): Key = bytes(isKey, encoding= 'utf-8')
-        else: Key = loadKey()
+        if(isKey): Key = loadKey()
+        else: Key = bytes(isKey, encoding= 'utf-8')
 
         cipherSuite = Fernet(Key)    
         plainText = cipherSuite.decrypt(message)
@@ -31,7 +31,7 @@ while True:
 
     if directionQuestion == '2':
         chiperMessage = input('Input your chiper message: ')
-        key = input('Input your key: ')
+        key = input('Input your key or type "True" to use stored key: ')
         receive(bytes(chiperMessage, encoding= 'utf-8'), key)
         
     if directionQuestion == '3':
