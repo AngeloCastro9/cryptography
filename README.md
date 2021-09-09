@@ -6,7 +6,7 @@
 
 2. In cmd/terminal:
 - > pip install cryptography
-- > python3 cryptography.py
+- > python3 cryptographyFernet.py
 
 **Functionalities:**
 - [x] Send
